@@ -4,7 +4,7 @@ project(grid_map_core)
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 
 ## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS)
+#find_package(catkin REQUIRED COMPONENTS)
 
 ## Define Eigen addons. 
 include(cmake/${PROJECT_NAME}-extras.cmake)
@@ -28,18 +28,18 @@ endif()
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS
-    include
-    ${EIGEN3_INCLUDE_DIR}
-  LIBRARIES
-    ${PROJECT_NAME}
-  CATKIN_DEPENDS
-  DEPENDS
-    #Eigen3
-  CFG_EXTRAS
-    ${PROJECT_NAME}-extras.cmake
-)
+#catkin_package(
+#  INCLUDE_DIRS
+#    include
+#    ${EIGEN3_INCLUDE_DIR}
+#  LIBRARIES
+#    ${PROJECT_NAME}
+#  CATKIN_DEPENDS
+#  DEPENDS
+#    #Eigen3
+#  CFG_EXTRAS
+#    ${PROJECT_NAME}-extras.cmake
+#)
 
 ###########
 ## Build ##
@@ -48,7 +48,7 @@ catkin_package(
 ## Specify additional locations of header files
 include_directories(
   include
-  ${catkin_INCLUDE_DIRS}
+  #${catkin_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
 )
 
@@ -70,7 +70,7 @@ add_library(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES}
+    #${catkin_LIBRARIES}
 )
 
 #############
@@ -78,25 +78,25 @@ target_link_libraries(${PROJECT_NAME}
 #############
 
 # Mark executables and/or libraries for installation
-install(
-  TARGETS ${PROJECT_NAME}
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(
+#  TARGETS ${PROJECT_NAME}
+#  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 # Mark cpp header files for installation
-install(
-  DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.hpp"
-)
+#install(
+#  DIRECTORY include/${PROJECT_NAME}/
+#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#  FILES_MATCHING PATTERN "*.hpp"
+#)
 
 # Mark other files for installation
-install(
-  DIRECTORY doc
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+#install(
+#  DIRECTORY doc
+#  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#)
 
 #############
 ## Testing ##
