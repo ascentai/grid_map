@@ -73,6 +73,7 @@ target_link_libraries(${PROJECT_NAME}
     #${catkin_LIBRARIES}
 )
 
+target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include ${EIGEN3_INCLUDE_DIR})
 #############
 ## Install ##
 #############
